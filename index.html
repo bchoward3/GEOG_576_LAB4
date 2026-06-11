@@ -34,9 +34,10 @@
                 "esri/views/MapView",
                 "esri/Graphic",
                 "esri/widgets/Locate",
+                "esri/widgets/Expand",
                 "esri/widgets/Search"
                     
-            ], (esriConfig, Map, MapView, Graphic, Locate, Search) => {
+            ], (esriConfig, Map, MapView, Graphic, Locate, Expand, Search) => {
             
                 //adding API Key
                 esriConfig.apiKey = "AAPTaBnZ46xkwyP4x51l5xjCrOw..vg5j4v-6rbmLIYpYUVCew1pE6BFTYR8H_HowG-lMBJyFIpbjPldNy_jB3XkEUJO6re92J5Nr8xKO0Qkgkekz8LBOaqM6cMEjxEOcSNjSWq0nl5XCGshkt5DP7Fvml4r6wzBMZ3B5JcGdbWSrHwGat79liRjfIU4Nwl0UDTTNmnwVUJPaUA5CE_D8fHfou85TCPT9Inpkpm10heyGSzAZkBQZhIJztteWbSU6GbbCObgeNbj0xwZJrW86-iq0wrPgtbbyB-k.AT1_Y2LwSTZO";
@@ -69,6 +70,15 @@
                 view.ui.add(searchWidget, {
                     position: "top-right",
                 });
+
+                // Constructing the Expand widget for the search bar to conserve screen space
+                const searchExpand = new Expand({
+                    view: view,
+                    content: editor,
+                    expandIcon: "search",
+                    group: "primary"
+                });
+                view.ui.add(searchExpand, "top-right");
 
 
 
