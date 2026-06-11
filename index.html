@@ -20,7 +20,13 @@
         <script src="https://js.arcgis.com/4.26/"></script>
         <!--loading the modules-->
         <script>
-            require([ "esri/config", "esri/Map", "esri/views/MapView" ], (esriConfig, Map, MapView) => {
+            require([ 
+                "esri/config", 
+                "esri/Map", 
+                "esri/views/MapView",
+                "esri/widgets/Locate" 
+                    
+            ], (esriConfig, Map, MapView, Locate) => {
             
                 //adding API Key
                 esriConfig.apiKey = "AAPTaBnZ46xkwyP4x51l5xjCrOw..vg5j4v-6rbmLIYpYUVCew1pE6BFTYR8H_HowG-lMBJyFIpbjPldNy_jB3XkEUJO6re92J5Nr8xKO0Qkgkekz8LBOaqM6cMEjxEOcSNjSWq0nl5XCGshkt5DP7Fvml4r6wzBMZ3B5JcGdbWSrHwGat79liRjfIU4Nwl0UDTTNmnwVUJPaUA5CE_D8fHfou85TCPT9Inpkpm10heyGSzAZkBQZhIJztteWbSU6GbbCObgeNbj0xwZJrW86-iq0wrPgtbbyB-k.AT1_Y2LwSTZO";
@@ -35,6 +41,18 @@
                     zoom: 11,
                     container: "viewDiv"
                 });
+
+                //Adding locate widget per the documentation along with the graphic marker
+                const locateWidget = new Locate({
+                    view: view,
+                    graphic: new Graphic({
+                    symbol: { type: "simple-marker" }
+                    })
+                });
+                view.ui.add(locateWidget, "top-left");
+
+
+                
             });
         </script>
     </head>
