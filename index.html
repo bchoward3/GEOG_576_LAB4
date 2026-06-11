@@ -25,9 +25,10 @@
                 "esri/Map", 
                 "esri/views/MapView",
                 "esri/Graphic",
-                "esri/widgets/Locate" 
+                "esri/widgets/Locate",
+                "esri/widgets/Search"
                     
-            ], (esriConfig, Map, MapView, Graphic, Locate) => {
+            ], (esriConfig, Map, MapView, Graphic, Locate, Search) => {
             
                 //adding API Key
                 esriConfig.apiKey = "AAPTaBnZ46xkwyP4x51l5xjCrOw..vg5j4v-6rbmLIYpYUVCew1pE6BFTYR8H_HowG-lMBJyFIpbjPldNy_jB3XkEUJO6re92J5Nr8xKO0Qkgkekz8LBOaqM6cMEjxEOcSNjSWq0nl5XCGshkt5DP7Fvml4r6wzBMZ3B5JcGdbWSrHwGat79liRjfIU4Nwl0UDTTNmnwVUJPaUA5CE_D8fHfou85TCPT9Inpkpm10heyGSzAZkBQZhIJztteWbSU6GbbCObgeNbj0xwZJrW86-iq0wrPgtbbyB-k.AT1_Y2LwSTZO";
@@ -51,6 +52,15 @@
                     })
                 });
                 view.ui.add(locateWidget, "top-right");
+
+                //Adding the search widget from Lab 3 but decided to change the position
+                const searchWidget = new Search({
+                    view: view
+                    });
+                // Adds the search widget below other elements in the top left corner of the view
+                view.ui.add(searchWidget, {
+                position: "bottom",
+                });
 
 
 
