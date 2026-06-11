@@ -23,7 +23,7 @@
             require([ "esri/config", "esri/Map", "esri/views/MapView" ], (esriConfig, Map, MapView) => {
             
                 //adding API Key
-                esriConfig.apiKey = "AAPTaJC6OlnMWzrV5502e4T7YLw..Q3kg0gik4HzZHFgtjjMz1tsKSHcmfwzaqNgyZXnAAiU31lsNKMj6naeZEIsC4RhrTo-l8Ays_-GYWfRMa3r25dPSxmT22YRxfAjVFnSpArETrD26MRt3wo27lcY3HsoXfB2Qte-TpgE28luocOApxTjo3eiycArBQEG2K530H3RqaMLyIL5t2afhLouD7ziykEJIAvxFYbFb25JTmkmTAlI2STuZ7C6NRKwAyVKzeU0QBhhh5YvcsXMlt8MoF_QjHRw45EI.AT1_pMD1r4jX";
+                esriConfig.apiKey = "AAPTazVmijAZJOjPyl5hCMPDqAA..zs1UyCs6v5nYRp3ZLCrSdJOsU9zc1sFBjXYsgR9WZUMyR55XSkc3kkwwSVYP_eE28kwGrEVlKcTsFjjRmQ1zv1AK99gVXuateIyat5P_13Ly8TIpkWfc4hFsjJ3n865y_niBHTqRPUHJGuyUTOiK3uyifmZ5tSMqvittvIizKFNHVErA_SdsGBEIihl3ptOrvvOIW4jlcqoCmIewexn5JDyToQEwHy0PtJJ3PgbOtGKo_UHWa2LkyLOpS3UdYCVW71kW5mk.AT1_l2BfxoE2";
 
                 const map = new Map ({
                     basemap: "arcgis-light-gray"
@@ -32,6 +32,8 @@
                 const view = new MapView({
                     container: "viewDiv", // Reference to the DOM node that will contain the view
                     map: map //References the map object
+                    center: [-81.1329, 32.0043],
+                    zoom: 11
                 });
             });
         </script>
