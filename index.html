@@ -86,6 +86,15 @@
                     //URL to Survey123 service
                     url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_2ffee82682f4477f9459dc646c11c11a_results/FeatureServer/0"
                 });
+
+                layer.when(() => {
+                    console.log("Layer loaded");
+                    console.log("Title:", layer.title);
+                    console.log("Geometry Type:", layer.geometryType);
+                })
+                .catch((error) => {
+                    console.error("Layer failed:", error);
+                });
                 //Adding layer to map
                 map.add(layer);
         });
