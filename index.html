@@ -35,9 +35,10 @@
                 "esri/Graphic",
                 "esri/widgets/Locate",
                 "esri/widgets/Expand",
-                "esri/widgets/Search"
+                "esri/widgets/Search",
+                "esri/layers/FeatureLayer"
                     
-            ], (esriConfig, Map, MapView, Graphic, Locate, Expand, Search) => {
+            ], (esriConfig, Map, MapView, Graphic, Locate, Expand, Search, FeatureLayer) => {
             
                 //adding API Key
                 esriConfig.apiKey = "AAPTaBnZ46xkwyP4x51l5xjCrOw..vg5j4v-6rbmLIYpYUVCew1pE6BFTYR8H_HowG-lMBJyFIpbjPldNy_jB3XkEUJO6re92J5Nr8xKO0Qkgkekz8LBOaqM6cMEjxEOcSNjSWq0nl5XCGshkt5DP7Fvml4r6wzBMZ3B5JcGdbWSrHwGat79liRjfIU4Nwl0UDTTNmnwVUJPaUA5CE_D8fHfou85TCPT9Inpkpm10heyGSzAZkBQZhIJztteWbSU6GbbCObgeNbj0xwZJrW86-iq0wrPgtbbyB-k.AT1_Y2LwSTZO";
@@ -79,6 +80,14 @@
                     group: "primary"
                 });
                 view.ui.add(searchExpand, "top-right");
+
+                //Adding feature layer
+                const layer = new FeatureLayer({
+                    //URL to Survey123 service
+                    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_2ffee82682f4477f9459dc646c11c11a_results/FeatureServer"
+                });
+                //Adding layer to map
+                map.add(layer);
         });
         </script>
     </head>
